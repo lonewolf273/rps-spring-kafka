@@ -4,6 +4,7 @@
 		<title>Home</title>
 	</head>
 	<body>
-		<h3>"Welcome home!"</h3>
+		<h1>Rock, Paper, Scissors!</h1>
 	</body>
+	<#include "/rps_choice.ftl">
 </html>
