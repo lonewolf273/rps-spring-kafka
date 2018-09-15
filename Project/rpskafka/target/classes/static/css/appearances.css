@@ -1,0 +1,25 @@
+.button{
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+  	-moz-user-select: none;     /* Firefox all */
+  	-ms-user-select: none;      /* IE 10+ */
+  	user-select: none;  
+  	
+  	text-decoration: none !important;
+  	color: black;
+  	text-align: center;
+}
+
+.choice
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+body
+{
+	text-align: center;
+}
