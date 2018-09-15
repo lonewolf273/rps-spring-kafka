@@ -1,16 +1,17 @@
 package com.techolution.rpskafka.producer;
 
-public class Result {
-	public String playerChoice;
-	public String comChoice;
-	public int result;
+public class Result{
+	
+	private String playerChoice;
+	private String comChoice;
+	private String result;
 	
 	public Result()
 	{
 		super();
 	}
 	
-	public Result(String playerChoice, String comChoice, int result)
+	public Result(String playerChoice, String comChoice, String result)
 	{
 		this.playerChoice = playerChoice;
 		this.comChoice = comChoice;
@@ -33,13 +34,22 @@ public class Result {
 		this.comChoice = comChoice;
 	}
 
-	public int getResult() {
+	public String getResult() {
 		return result;
 	}
 
-	public void setResult(int result) {
+	public void setResult(String result) {
 		this.result = result;
 	}
 	
-	
+	public String toString()
+	{
+	    return new StringBuilder()
+	    		.append("{")
+	            .append("\"playerChoice\":\""+playerChoice+"\",")
+	            .append("\"comChoice\":\""+comChoice+"\",")
+	            .append("\"result\":\""+result+"\"}")
+	            .toString();
+	}
+
 }

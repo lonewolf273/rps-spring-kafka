@@ -6,8 +6,15 @@ function fight(player)
 	changeResult(getResult(player, com));
 	
 	s = {playerChoice:player, comChoice:com, result:getResult(player, com)};
-	console.log(JSON.stringify(s));
-	$.post("/", s);
+	
+	$.ajax({
+		  type: "POST",
+		  contentType: "application/json; charset=utf-8",
+		  url: "/",
+		  data: JSON.stringify(s),
+		  dataType: "json"
+	});
+	
 }
 
 function changeResult(result)
