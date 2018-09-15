@@ -9,12 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class RPSDisplayController {
 
 	@GetMapping("/")
-	public ModelAndView home(@RequestBody(required=false) String name)
+	public ModelAndView home()
 	{
-		if(name == null)
-			name = "World";
 		ModelAndView model = new ModelAndView("index");
-		model.addObject("name", name);
 		return model;
 	}
+
 }

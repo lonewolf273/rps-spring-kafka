@@ -3,6 +3,29 @@ function fight(player)
 	changeTitle(player);
 	com = getComChoice();
 	displayImage(com);
+	changeResult(getResult(player, com));
+	
+	s = JSON.stringify({playerChoice:player, comChoice:com, result:getResult(player, com)});
+	document.getElementById("title").innerHTML = s;
+	
+	$.post("/", s);
+}
+
+function changeResult(result)
+{
+	s = "";
+	switch(result)
+	{
+	case -1:
+		s = "You have lost!";
+		break;
+	case 1:
+		s = "You have won!";
+		break;
+	default:
+		s = "It was a draw!";
+	}
+	document.getElementById("result").innerHTML = s;
 }
 
 function changeTitle(type)
@@ -35,6 +58,13 @@ function checkWin(player, com)
 	if(player == "paper" && com == "scissors") return false;
 	if(player == "scissors" && com == "rock") return false;
 	return true;
+}
+
+function getResult(player, com)
+{
+	if(checkDraw(player, com)) return 0;
+	if(checkWin(player, com)) return 1;
+	return -1;
 }
 
 function reset()

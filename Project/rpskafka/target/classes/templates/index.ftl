@@ -4,7 +4,7 @@
 	<head>
 		<title>Home</title>
 		<link rel="stylesheet" type="text/css" href="/css/appearances.css">
-		<script src="/js/combat.js"></script>
+
 		
 	</head>
 	<body>
@@ -15,5 +15,9 @@
 		</div>
 		<#include "/rps_choice.ftl">
 	</body>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/combat.js"></script>
+
+
 
 </html>
