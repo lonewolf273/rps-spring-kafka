@@ -5,9 +5,8 @@ function fight(player)
 	displayImage(com);
 	changeResult(getResult(player, com));
 	
-	s = JSON.stringify({playerChoice:player, comChoice:com, result:getResult(player, com)});
-	document.getElementById("title").innerHTML = s;
-	
+	s = {playerChoice:player, comChoice:com, result:getResult(player, com)};
+	console.log(JSON.stringify(s));
 	$.post("/", s);
 }
 
