@@ -5,8 +5,10 @@ function fight(player)
 	displayImage(com);
 	changeResult(getResult(player, com));
 	
+	//creates a record class for use in the Java Application
 	s = {playerChoice:player, comChoice:com, result:getResult(player, com)};
 	
+	//sends a post request of type JSON to the page
 	$.ajax({
 		  type: "POST",
 		  contentType: "application/json; charset=utf-8",
