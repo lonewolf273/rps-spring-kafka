@@ -47,14 +47,4 @@ public class Result{
 		this.result = result;
 	}
 	
-	public String toString()
-	{
-	    return new StringBuilder()
-	    		.append("{")
-	            .append("\"playerChoice\":\""+playerChoice+"\",")
-	            .append("\"comChoice\":\""+comChoice+"\",")
-	            .append("\"result\":\""+result+"\"}")
-	            .toString();
-	}
-
 }
