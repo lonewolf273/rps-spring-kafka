@@ -1,10 +1,18 @@
 package com.techolution.rpskafkaconsumer.result;
 
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
+
+@Table
 public class Result {
+
+	//@CassandraType(type = DataType.Name.TEXT)
 	private UUID id;
+	@PrimaryKey
 	private LocalDateTime timestamp;
 	private String playerChoice;
 	private String comChoice;

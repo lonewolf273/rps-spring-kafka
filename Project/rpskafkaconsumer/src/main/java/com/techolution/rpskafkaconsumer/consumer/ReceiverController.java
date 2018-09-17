@@ -1,10 +1,14 @@
 package com.techolution.rpskafkaconsumer.consumer;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techolution.rpskafkaconsumer.result.Result;
+import com.techolution.rpskafkaconsumer.result.ResultRepository;
+import com.techolution.rpskafkaconsumer.result.ResultService;
 
 @RestController
 public class ReceiverController {
@@ -12,11 +16,19 @@ public class ReceiverController {
 	@Autowired
 	Receiver receiver;
 	
+	@Autowired
+	ResultService result;
+	
 	@GetMapping("/")
 	private Object home()
 	{
-		///TODO: receive the last value from the DB (when you make one)
-		return receiver.recentMessage;
+		return result.getLast();
+	}
+	
+	@GetMapping("/list")
+	private List<Result> list()
+	{
+		return result.getResults();
 	}
 	
 }
