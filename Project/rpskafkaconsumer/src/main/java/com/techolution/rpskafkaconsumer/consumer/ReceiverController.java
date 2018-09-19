@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techolution.rpskafkaconsumer.result.Result;
-import com.techolution.rpskafkaconsumer.result.ResultRepository;
 import com.techolution.rpskafkaconsumer.result.ResultService;
 
 @RestController

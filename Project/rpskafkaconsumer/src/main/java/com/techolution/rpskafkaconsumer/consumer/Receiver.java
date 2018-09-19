@@ -28,11 +28,8 @@ public class Receiver {
 	public void receive(ConsumerRecord<?, ?> record)
 	{
 		System.out.println(record.value());
-		///TODO: DO SOMETHING WITH THIS VALUE AND DON'T STORE IT HERE FOR FREAK'S SAKE
-		///TODO: Possibly think about making an entity and uploading the file to a database
 		Result recentMessage = new Gson().fromJson(record.value().toString(), Result.class);
-		if(repository != null)
-			repository.save(recentMessage);
+		repository.save(recentMessage);
 		getLatch().countDown();
 	}
 }
